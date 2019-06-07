@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<div style="background-image: url(west.jpg); height: 1000px; width: 100%; background-size: 100% 100%">
+
+		<h1 class="score ml-5" >0</h1>
+		<img class="enemy1 " src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 20%; margin-top: 19%; ">
+		<img class="enemy1 " src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 60%; margin-top: 16%; ">
+		<img class="enemy1 " src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 10%; margin-top: 12%; ">
+		<img class="enemy1 " src="shooter.png" alt="" style="position: absolute; width: 6%; margin-left: 40%; margin-top: 13%; ">
+
+		<img class="enemy2 " src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 10%; margin-top: 30%; ">
+		<img class="enemy2 " src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 40%; margin-top: 30%; ">
+		<img class="enemy2 " src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 60%; margin-top: 30%; ">
+		<img class="enemy2 " src="cowboy.png" alt="" style="position: absolute; width: 5%; margin-left: 30%; margin-top: 24%; ">
+	
+		<img class="enemy3 " src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 0%; margin-top: 20%; ">
+		<img class="enemy3 " src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 25%; margin-top: 10%; ">
+		<img class="enemy3 " src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 50%; margin-top: 24%; ">
+		<img class="enemy3 " src="cowboy2.png" alt="" style="position: absolute; width: 10%; margin-left: 70%; margin-top: 35%; ">
+
+
+
+	</div>
+	<script>
+	let cowboy1 = document.querySelectorAll('.enemy1')
+	let cowboy2 = document.querySelectorAll('.enemy2')	
+	let cowboy3 = document.querySelectorAll('.enemy3')
+	let score = document.querySelector('.score')
+	let summa = 0		
+	for(let index = 0; index<4; index = index + 1){
+	 cowboy1[index].onclick = function(){
+	 	func(10)
+	 	cowboy1[index].style.display = 'none'
+	 }
+}
+	for(let index = 0; index<4; index = index + 1){
+	 cowboy2[index].onclick = function(){
+	 	func(20)
+	 	cowboy2[index].style.display = 'none'
+	 }
+}
+	for(let index = 0; index<4; index = index + 1){
+	 cowboy3[index].onclick = function(){
+	 	func(30)
+	 	cowboy3[index].style.display = 'none'
+	 }
+}
+
+
+
+let func = function(arg) {
+			alert(arg)
+			summa = summa+arg
+			score.innerHTML = summa
+			if ( summa  >=100   ) {
+				alert("ты проиграл")
+
+} 
+
+		}
+		for(let index = 0; index<12; index = index + 1){
+			let end = function (){
+				for(let index = 0; index<12; index = index + 1){
+					cowboy1[index].style.display = 'none'
+					cowboy2[index].style.display = 'none'
+					cowboy3[index].style.display = 'none'
+					if ( summa  <=100   ) {
+				alert("ты победил")
+				
+} 
+				}	
+		}
+		setTimeout(end,9000)
+	}	
+	</script>
+</body>
+</html>
